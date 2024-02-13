@@ -6,14 +6,15 @@ SECTIONS_NS_HEAD
 /*!
  * \brief section Q0: 4-bit quality flags
  */
-class Q0 : public Section{
+class Q0 : public Section
+{
 public:
-  using Section::Section;  // default to parent constructor
-  char * nominalType() const {
+  using Section::Section; // default to parent constructor
+  const char *nominalType() const
+  {
     return "Q0";
   }
 
-}__attribute__((packed));
+} __attribute__((packed));
 
 SECTIONS_NS_FOOT
-
