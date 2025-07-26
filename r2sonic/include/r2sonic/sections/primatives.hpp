@@ -1,5 +1,6 @@
 #ifndef PRIMATIVES_HPP
 #define PRIMATIVES_HPP
+#include <cstdint>  
 #include "sections_defs.hpp"
 #include <stddef.h>
 #include <string.h>
