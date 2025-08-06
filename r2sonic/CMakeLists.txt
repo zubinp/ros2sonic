@@ -56,6 +56,7 @@ file(GLOB HDRS CONFIGURE_DEPENDS
 file(GLOB SRCS CONFIGURE_DEPENDS
   "src/*.cpp"
   "src/*.hpp"
+  "../../sensor_drivers/src/raw_data_logger.cpp"
 )
 file(GLOB NODES CONFIGURE_DEPENDS
   "nodes/*.cpp"
@@ -63,6 +64,7 @@ file(GLOB NODES CONFIGURE_DEPENDS
 
 include_directories(
   include
+  ../../sensor_drivers/include
 )
 
 ###########

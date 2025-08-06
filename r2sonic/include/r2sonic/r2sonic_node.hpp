@@ -56,6 +56,7 @@ public:
     std::string interface_ip;       //!< the interface you want to listen on (0.0.0.0 to listen on all)
     std::string tx_frame_id;        //!< the frame ID of the acoustic center of the transmitter
     std::string rx_frame_id;        //!< the frame ID of the acoustic center of the receiver
+    std::string raw_log_directory;  //!< directory for raw data logging
     /*!
      * \brief declares all the parameters and initialized all the stored variables
      * within the struct
