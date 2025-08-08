@@ -10,6 +10,7 @@ set(ROS_DEPENDS
     std_msgs
     acoustic_msgs
     r2sonic_interfaces
+    mbes_utilities
   )
 
 set(EXTERNAL_DEPENDS
@@ -56,7 +57,6 @@ file(GLOB HDRS CONFIGURE_DEPENDS
 file(GLOB SRCS CONFIGURE_DEPENDS
   "src/*.cpp"
   "src/*.hpp"
-  "../../sensor_drivers/src/raw_data_logger.cpp"
 )
 file(GLOB NODES CONFIGURE_DEPENDS
   "nodes/*.cpp"
@@ -64,7 +64,6 @@ file(GLOB NODES CONFIGURE_DEPENDS
 
 include_directories(
   include
-  ../../sensor_drivers/include
 )
 
 ###########
@@ -81,6 +80,7 @@ foreach(NODE_FILE ${NODES})
   list(APPEND EXECUTABLES ${NODE_NAME})
   add_executable(${NODE_NAME} ${NODE_FILE} ${HDRS} ${SRCS})
   ament_target_dependencies(${NODE_NAME} ${ROS_DEPENDS} ${EXTERNAL_DEPENDS_LIB})
+  target_link_libraries(${NODE_NAME} mbes_utilities::mbes_utilities)
   target_include_directories(${NODE_NAME} PRIVATE "include/${PROJECT_NAME}/")
 endforeach(NODE_FILE)
 
