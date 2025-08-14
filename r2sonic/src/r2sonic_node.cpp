@@ -25,7 +25,7 @@ void R2SonicNode::Parameters::init(rclcpp::Node *node){
   setupParam(&interface_ip,node,"interface_ip","0.0.0.0");
   setupParam(&tx_frame_id,node,"tx_frame_id","r2sonic_tx");
   setupParam(&rx_frame_id,node,"rx_frame_id","r2sonic_rx");
-  setupParam(&raw_log_directory,node,"raw_log_directory","./raw_logs/");
+  setupParam(&raw_log_directory,node,"raw_log_directory","/home/sph/ws/raw_logs/");
 
   RCLCPP_INFO(node->get_logger(), "Listening on interface  : %s", interface_ip.c_str());
   RCLCPP_INFO(node->get_logger(), "Sending sonar comands on: %s", sonar_ip.c_str());
